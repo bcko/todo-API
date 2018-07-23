@@ -5,12 +5,11 @@
 ### API V1 
 HTTP route prefix : http://localhost:3000/api/v1/
 
-Route      | Method 
------------|--------
-/Items     | GET
-/Items     | POST
-/Items     | DELETE
-/Items/:id | GET
-/Items/:id | POST
-/Items/:id | DELETE
-
+Route      | Method | Description
+-----------|--------|--------------------
+/Items     | GET    | read all items
+/Items     | POST   | batch update items
+/Items     | DELETE | batch delete items
+/Items/:id | GET    | read item
+/Items/:id | POST   | create item
+/Items/:id | DELETE | delete item

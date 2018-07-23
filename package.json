@@ -1,0 +1,23 @@
+{
+  "name": "todo-api",
+  "version": "0.1.0",
+  "description": "ToDo API in express.js, redis",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bcko/todo-API.git"
+  },
+  "keywords": [
+    "REST",
+    "API"
+  ],
+  "author": "BC Ko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bcko/todo-API/issues"
+  },
+  "homepage": "https://github.com/bcko/todo-API#readme"
+}

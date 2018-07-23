@@ -1,6 +1,6 @@
 # todo-API
 
-## API endpoints (Version 1)
+## API endpoints
 
 HTTP route prefix : http://localhost:3000/api/v1/
 
@@ -13,11 +13,11 @@ Route      | Method | Description
 /Items/:id | POST   | create item
 /Items/:id | DELETE | delete item
 
-### HTTP Request Body Example
+## HTTP Request Body Example
 
 
-### HTTP Response Body Example
-#### GET http://localhost:3000/api/v1/Items
+## HTTP Response Body Example
+### GET http://localhost:3000/api/v1/Items
 ```javascript
 {
   "items" : [

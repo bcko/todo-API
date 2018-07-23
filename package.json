@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/bcko/todo-API/issues"
   },
-  "homepage": "https://github.com/bcko/todo-API#readme"
+  "homepage": "https://github.com/bcko/todo-API#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }

@@ -13,11 +13,12 @@ Route      | Method | Description
 /Items/:id | POST   | create item
 /Items/:id | DELETE | delete item
 
-## HTTP Request Body Example
-
-
-## HTTP Response Body Example
 ### GET http://localhost:3000/api/v1/Items
+
+#### HTTP Request Body Example
+N/A
+
+#### HTTP Response Body Example
 ```javascript
 {
   "items" : [

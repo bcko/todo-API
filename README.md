@@ -5,6 +5,8 @@
 * nodejs v10.7.0
 * npm v6.1.0
 * redis v4.0.10 [docker image](https://hub.docker.com/_/redis/)
+    * start docker image with persistent storage
+    * have port 6379 open for redis docker image
 * others see [package.json](https://github.com/bcko/todo-API/blob/master/package.json)
 
 ## How to run

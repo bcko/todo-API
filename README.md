@@ -21,7 +21,7 @@ Route      | Method | Description
 
 ### HTTP Response Body Example
 #### GET http://localhost:3000/api/v1/Items
-```javascript
+```json
 {
   "items" : [
     { 

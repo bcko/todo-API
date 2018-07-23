@@ -11,10 +11,11 @@
 ```
 # start server
 node app.js
-
-# test
-npm test
 ```
+
+## How to test
+Install [Postman](https://www.getpostman.com/)
+
 
 ## API endpoints
 

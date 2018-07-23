@@ -14,22 +14,19 @@ Route      | Method | Description
 /Items/:id | DELETE | delete item
 
 ### HTTP Request Body Example
-```javascript
 
-
-```
 
 ### HTTP Response Body Example
 #### GET http://localhost:3000/api/v1/Items
-```json
+```javascript
 {
   "items" : [
     { 
-      "itemsID: "1",
+      "itemsID" : "1",
       "itemMessage" : "item 1"
     },
     {
-      "itemsID": "2",
+      "itemsID" : "2",
       "itemMessage" : "item 2"
     }
   ]

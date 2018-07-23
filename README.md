@@ -1,8 +1,7 @@
 # todo-API
 
-## API endpoints
+## API endpoints (Version 1)
 
-### API V1 
 HTTP route prefix : http://localhost:3000/api/v1/
 
 Route      | Method | Description
@@ -13,6 +12,30 @@ Route      | Method | Description
 /Items/:id | GET    | read item
 /Items/:id | POST   | create item
 /Items/:id | DELETE | delete item
+
+### HTTP Request Body Example
+```javascript
+
+
+```
+
+### HTTP Response Body Example
+#### GET http://localhost:3000/api/v1/Items
+```javascript
+{
+  "items" : [
+    { 
+      "itemsID: "1",
+      "itemMessage : "item 1"
+    },
+    {
+      "itemsID: "2",
+      "itemMessage" : "item 2"
+    }
+  ]
+}
+```
+
 
 ## Optional Tasks
 - [] Implement JWT authorization using PassportJS

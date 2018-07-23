@@ -1,9 +1,20 @@
 # todo-API
 
 ## Dependencies
+* ubuntu 18.04
 * nodejs v10.7.0
-* redis v4.0.10
+* npm v6.1.0
+* redis v4.0.10 [docker image](https://hub.docker.com/_/redis/)
 * others see [package.json](https://github.com/bcko/todo-API/blob/master/package.json)
+
+## How to run
+```
+# start server
+node app.js
+
+# test
+npm test
+```
 
 ## API endpoints
 

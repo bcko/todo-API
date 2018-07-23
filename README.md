@@ -25,11 +25,11 @@ HTTP route prefix : http://localhost:3000/api/v1/
 Route      | Method | Description
 -----------|--------|--------------------
 /Items     | GET    | read all items
-/Items     | POST   | batch update items
-/Items     | DELETE | batch delete items
+/Items     | POST   | batch update/create items (idempotent)
+/Items     | DELETE | batch delete items (idempotent)
 /Items/:id | GET    | read item
-/Items/:id | POST   | create item
-/Items/:id | PUT    | update item
+/Items/:id | POST   | create item. (update not possible)
+/Items/:id | PUT    | update item. (creation not possible) 
 /Items/:id | DELETE | delete item
 
 ### GET http://localhost:3000/api/v1/Items

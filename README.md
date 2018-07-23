@@ -14,6 +14,17 @@ Route      | Method | Description
 /Items/:id | POST   | create item
 /Items/:id | DELETE | delete item
 
+## Optional Tasks
+- [] Implement JWT authorization using PassportJS
+- [] Test
+  - [] MochaJS
+  - [] SinonJS
+  - [] Cypress
+- [] Implement web security best practices (e.g. XSS)
+- [] Implement web performance best practices (e.g. compression) 
+- [] Deploy to Google Kubernetes Engine
+
+
 ## References
 ### API design
 * [Google Cloud API Design Guide](https://cloud.google.com/apis/design/)

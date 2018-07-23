@@ -4,6 +4,7 @@
 
 HTTP route prefix : http://localhost:3000/api/v1/
 
+### API endpoints summary
 Route      | Method | Description
 -----------|--------|--------------------
 /Items     | GET    | read all items
@@ -11,32 +12,127 @@ Route      | Method | Description
 /Items     | DELETE | batch delete items
 /Items/:id | GET    | read item
 /Items/:id | POST   | create item
+/Items/:id | PUT    | update item
 /Items/:id | DELETE | delete item
 
 ### GET http://localhost:3000/api/v1/Items
 
-#### HTTP Request Body Example
+##### HTTP Request Body Example
 N/A
 
-#### HTTP Response Body Example
+##### HTTP Response Body Example
 ```javascript
 {
   "items" : [
     { 
       "itemsID" : "1",
-      "itemMessage" : "item 1"
+      "itemMessage" : "item 1 message"
     },
     {
       "itemsID" : "2",
-      "itemMessage" : "item 2"
+      "itemMessage" : "item 2 message"
     }
   ]
 }
 ```
 
+### POST http://localhost:3000/api/v1/Items
+##### HTTP Request Body Example
+
+```javascript 
+{
+  "items" : [
+    { 
+      "itemsID" : "1",
+      "itemMessage" : "item 1 message"
+    },
+    {
+      "itemsID" : "2",
+      "itemMessage" : "item 2 message"
+    }
+  ]
+}
+
+```
+
+##### HTTP Response Body Example
+```javascript
+
+
+```
+
+### DELETE http://localhost:3000/api/v1/Items
+##### HTTP Request Body Example
+
+```javascript 
+{
+  "items" : [
+    { "itemsID" : "1"},
+    { "itemsID" : "2"}
+  ]
+}
+```
+
+
+##### HTTP Response Body Example
+```javascript
+
+```
+
+### GET http://localhost:3000/api/v1/Items/:itemID
+##### HTTP Request Body Example
+N/A
+
+##### HTTP Response Body Example
+```javascript
+{
+  "itemsID" : "2",
+  "itemMessage" : "item 2 message"
+}
+```
+
+### POST http://localhost:3000/api/v1/Items/:itemID
+##### HTTP Request Body Example
+```javascript 
+{
+  "itemsID" : "2",
+  "itemMessage" : "item 2 message"
+}
+```
+
+##### HTTP Response Body Example
+```javascript
+
+
+```
+
+### PUT http://localhost:3000/api/v1/Items/:itemID
+##### HTTP Request Body Example
+```javascript 
+{
+  "itemsID" : "2",
+  "itemMessage" : "item 2 updated message"
+}
+```
+
+##### HTTP Response Body Example
+```javascript
+
+
+```
+### DELETE http://localhost:3000/api/v1/Items/:itemID
+##### HTTP Request Body Example
+N/A
+
+##### HTTP Response Body Example
+```javascript
+
+
+```
 
 ## Optional Tasks
 - [] Implement JWT authorization using PassportJS
+- [] API pagination
 - [] Test
   - [] MochaJS
   - [] SinonJS

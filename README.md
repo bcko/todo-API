@@ -26,10 +26,10 @@ Route      | Method | Description
   "items" : [
     { 
       "itemsID: "1",
-      "itemMessage : "item 1"
+      "itemMessage" : "item 1"
     },
     {
-      "itemsID: "2",
+      "itemsID": "2",
       "itemMessage" : "item 2"
     }
   ]

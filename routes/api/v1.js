@@ -1,12 +1,12 @@
+// library import
 const express = require('express');
-const router = express.Router();
-
 const redis = require('redis');
-
 const bodyParser = require('body-parser');
-
-const jsonParser = bodyParser.json();
 const async = require('async');
+
+
+const router = express.Router();
+const jsonParser = bodyParser.json();
 
 
 const client = redis.createClient({
@@ -29,6 +29,7 @@ const client = redis.createClient({
         return Math.min(options.attempt * 100, 3000);
     }
 });
+
 
 router.route('/Items')
     // list all items
@@ -76,7 +77,7 @@ router.route('/Items')
     })
 
 
-
+// route middleware for looking up items
 function lookupNoteItems(req, res, next) {
     const itemsID = req.params.ItemsID
 
@@ -90,7 +91,6 @@ function lookupNoteItems(req, res, next) {
         } 
         req.noteItem = results
         next()
-
     })
 }
 
@@ -99,7 +99,6 @@ router.route('/Items/:ItemsID')
     .get(lookupNoteItems, function (req, res) {
         // A successful GET method typically returns HTTP status code 200 (OK). If the resource cannot be found, the method should return 404 (Not Found).
         res.status(200).json({noteItem: req.noteItem});
-  
     })
     // create todo item
     .post(jsonParser, function (req, res) {
@@ -127,7 +126,10 @@ router.route('/Items/:ItemsID')
     })
     // update todo item
     .put(jsonParser, function (req, res){
-        const itemsID = req.params.ItemsID
+        // If a PUT method creates a new resource, it returns HTTP status code 201 (Created), as with a POST method.
+        // If the method updates an existing resource, it returns either 200 (OK) or 204 (No Content).
+        // In some cases, it might not be possible to update an existing resource. In that case, consider returning HTTP status code 409 (Conflict)
+        const itemsID = req.params.ItemsID;
         if (!req.body) {
             return res.sendStatus(400)
         }
@@ -146,28 +148,19 @@ router.route('/Items/:ItemsID')
                 res.status(200)
                 return res.json({ message: ['note Item changed']});
             }
-        
         })  
-// If a PUT method creates a new resource, it returns HTTP status code 201 (Created), as with a POST method.
-    // If the method updates an existing resource, it returns either 200 (OK) or 204 (No Content).
-    // In some cases, it might not be possible to update an existing resource. In that case, consider returning HTTP status code 409 (Conflict)
-    
-    // Consider implementing bulk HTTP PUT operations that can batch updates to multiple resources in a collection. The PUT request should specify the URI of the collection, and the request body should specify the details of the resources to be modified. This approach can help to reduce chattiness and improve performance 
     })
     // delte todo item
     .delete(lookupNoteItems, function (req, res){
+        // If the delete operation is successful, the web server should respond with HTTP status code 204, indicating that the process has been successfully handled, but that the response body contains no further information.
+        //  If the resource doesn't exist, the web server can return HTTP 404 (Not Found).
         client.del(req.noteItems, function(err, results) {
             if (err) {
                 res.status(500)
                 return res.json({ errors: ['error while deleting']})
             }
         });
-        res.sendStatus(204)
-
-
-        // If the delete operation is successful, the web server should respond with HTTP status code 204, indicating that the process has been successfully handled, but that the response body contains no further information.
-//  If the resource doesn't exist, the web server can return HTTP 404 (Not Found).
+        res.sendStatus(204)        
     })
-
 
 module.exports = router;

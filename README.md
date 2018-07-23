@@ -1,5 +1,10 @@
 # todo-API
 
+## Dependencies
+* nodejs v10.7.0
+* redis v4.0.10
+* others see [package.json](https://github.com/bcko/todo-API/blob/master/package.json)
+
 ## API endpoints
 
 HTTP route prefix : http://localhost:3000/api/v1/
